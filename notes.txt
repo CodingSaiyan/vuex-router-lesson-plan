@@ -1,0 +1,23 @@
+1. Start by having the students create a new project bringing in vuex and vue-router
+    1.1 In the options, make sure that students say no to using history mode
+2. Have the students create a server folder and add a index.js. 
+    2.1 Have students create data folder in server and create users.js in the data folder
+    2.2 Slack out the index.js and users.js code 
+3. Have students npm install axios express express-session body-parser
+4. Have students create vue.config.js at root of project 
+    4.1 Slack out code and explain that this is the way to correctly set up a proxy with the new vue cli
+5. Setup package.json with "main": "server/index.js" and "nodemonConfig"
+6. Now that initial setup is out of the way, go into the router.js file and show how each route is set up. Then go into store.js and show what a basic setup for a vuex store looks like.
+7. Create Login.vue Profile.vue and User.vue in the views folder
+8. Go to Login.vue and create the template.
+    8.1 create login method and route to /
+    8.2 Show how to create state and a mutation in the store to update the state from a component
+    8.3 in the login .then commit the login mutation
+9. Create the mounted logic that will automatically take you to / if the user is logged in 
+10. Now move into the profile view. 
+    10.1 Create the mounted and loadProfile method first that will load the profile
+    10.2 Create the div that loops through the returned profile and renders it out 
+    10.3 Create profile in the state and the action that will update this value 
+    10.4 in the .then for getting profile, commit action to set profile 
+    10.5 Bring in ...mapState and create the profile piece on state. Then map through it in the template
+    

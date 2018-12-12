@@ -30,7 +30,12 @@ app.post('/api/login', (req, res) => {
 })
 
 app.get('/api/profile', checkLoggedIn, (req, res) => {
-    return res.status(200).send(req.session.profile)
+    let otherUsers = users.filter( user => user.id !== req.session.profile.id)
+    let returnObj = {
+        profile: req.session.profile,
+        users: otherUsers
+    }
+    return res.status(200).send(returnObj)
 })
 
 app.get('/api/user/:id', checkLoggedIn, (req, res) => {

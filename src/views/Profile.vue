@@ -6,6 +6,11 @@
     :key="post.id">
     {{post.text}}
     </div>
+    <div v-for="user in users"
+    :key="user.id"
+    v-on:click="loadUserProfile(user.id)">
+      {{user.name}}
+    </div>
   </div>
 </template>
 
@@ -30,11 +35,15 @@ export default {
       axios.get('/api/profile').then(res => {
         this.$store.commit('setProfile', res.data)
       }).catch(err => this.$router.push('login'))
+    },
+    loadUserProfile(id) {
+      console.log(id)
     }
   },
   computed: {
     ...mapState({
-      profile: state => state.profile
+      profile: state => state.profile,
+      users: state => state.users
     })
   }
 }

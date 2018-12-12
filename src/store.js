@@ -6,14 +6,17 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     loggedIn: false,
-    profile: {}
+    profile: {},
+    users: []
   },
   mutations: {
     login(state) {
       state.loggedIn = true;
     },
-    setProfile(state, profile) {
-      state.profile = profile
+    setProfile(state, data) {
+      console.log(data)
+      state.profile = data.profile 
+      state.users = data.users
     }
   }
 })
