@@ -5,12 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    loggedIn: false,
+    profile: {}
   },
   mutations: {
-
-  },
-  actions: {
-
+    login(state) {
+      state.loggedIn = true;
+    },
+    setProfile(state, profile) {
+      state.profile = profile
+    }
   }
 })
