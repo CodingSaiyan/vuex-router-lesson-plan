@@ -14,7 +14,6 @@ export default new Vuex.Store({
       state.loggedIn = true;
     },
     setProfile(state, data) {
-      console.log(data)
       state.profile = data.profile 
       state.users = data.users
     }

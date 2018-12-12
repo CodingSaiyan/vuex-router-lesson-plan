@@ -37,7 +37,7 @@ export default {
       }).catch(err => this.$router.push('login'))
     },
     loadUserProfile(id) {
-      console.log(id)
+      this.$router.push({path: `/user/${id}`})
     }
   },
   computed: {
