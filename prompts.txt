@@ -1,0 +1,5 @@
+1. Build a store that allows users to login, add to their cart and checkout. (checkout will just remove all items from the session) Populate your server with some fake products and users in javascript files.
+
+2. Create a fake portfolio page for somebody that has a home page, about page, contact page and login. Once logged in users can see a protected page. Load user info from server javascript file and store in vuex.
+
+3. Come up with your own prompt
