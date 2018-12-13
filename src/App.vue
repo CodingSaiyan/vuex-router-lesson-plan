@@ -24,7 +24,7 @@ export default {
       axios.delete('/api/logout').then( res => {
         console.log(1111)
       this.$store.commit('logout')
-      this.$router.go('login')
+      this.$router.push({path: '/login'})
       })
     }
   }
