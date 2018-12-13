@@ -16,6 +16,9 @@ export default new Vuex.Store({
     setProfile(state, data) {
       state.profile = data.profile 
       state.users = data.users
+    },
+    logout(state) {
+      state.loggedIn = false
     }
   }
 })

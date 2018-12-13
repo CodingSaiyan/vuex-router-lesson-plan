@@ -45,6 +45,11 @@ app.get('/api/user/:id', checkLoggedIn, (req, res) => {
     return res.status(200).send({})
 })
 
+app.delete('/api/logout', (req, res) => {
+    req.session.destroy()
+    res.sendStatus(200)
+})
+
 app.listen(3200, () => {
     console.log('Listening on port 3200')
 })
