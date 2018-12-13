@@ -1,5 +1,6 @@
 <template>
   <div class="user-main-container">
+    <button v-on:click="goBack">Go back</button>
     <span>{{userProfile.name}}</span>
     <img :src="userProfile.pictureUrl" class="profile-image"/>
     <div v-for="post in userProfile.posts"
@@ -23,6 +24,11 @@ export default {
     axios.get(`/api/user/${this.$route.params.id}`).then(res => {
       this.userProfile = res.data
     }).catch(err => err.response.data === 'Not Authorized' ? this.$router.push({path: '/login'}) : alert('Could not retrieve user'))
+  }, 
+  methods: {
+    goBack() {
+      this.$router.go(-1)
+    }
   }
 }
 </script>
