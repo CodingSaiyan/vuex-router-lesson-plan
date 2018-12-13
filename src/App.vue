@@ -1,12 +1,24 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Profile</router-link> |
-      <router-link to="/login">Login</router-link>
+      <router-link to="/" v-if="this.loggedIn">Profile</router-link>
+      <router-link to="/login" v-else>Login</router-link> 
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+import { mapState } from 'vuex'
+export default {
+  name: 'App',
+  computed: {
+    ...mapState({
+      loggedIn: state => state.loggedIn
+    })
+  }
+}
+</script>
 
 <style>
 #app {
@@ -23,6 +35,7 @@
 #nav a {
   font-weight: bold;
   color: #2c3e50;
+  margin: 0px 5px;
 }
 
 #nav a.router-link-exact-active {

@@ -1,9 +1,10 @@
 <template>
-  <div>
-    {{userProfile.name}}
-    <img :src="userProfile.pictureUrl"/>
+  <div class="user-main-container">
+    <span>{{userProfile.name}}</span>
+    <img :src="userProfile.pictureUrl" class="profile-image"/>
     <div v-for="post in userProfile.posts"
-    :key="post.id">
+    :key="post.id"
+    class="profile-post">
     {{post.text}}
     </div>
   </div>
@@ -19,7 +20,7 @@ export default {
     }
   },
   mounted() {
-    axios.get(`/api/user/${this.$router.history.current.params.id}`).then(res => {
+    axios.get(`/api/user/${this.$route.params.id}`).then(res => {
       this.userProfile = res.data
     }).catch(err => err.response.data === 'Not Authorized' ? this.$router.push({path: '/login'}) : alert('Could not retrieve user'))
   }
@@ -27,5 +28,9 @@ export default {
 </script>
 
 <style>
-
+.user-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>

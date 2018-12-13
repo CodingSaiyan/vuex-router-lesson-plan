@@ -20,4 +20,9 @@
     10.3 Create profile in the state and the action that will update this value 
     10.4 in the .then for getting profile, commit action to set profile 
     10.5 Bring in ...mapState and create the profile piece on state. Then map through it in the template
+11. Move into user view 
+    11.1 create the data 
+    11.2 create the mounted 
+12. Go into app and use conditional rendering to change the nav
+    
     
