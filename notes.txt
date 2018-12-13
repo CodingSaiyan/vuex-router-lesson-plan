@@ -24,7 +24,8 @@
     11.1 create the data 
     11.2 create the mounted 
 12. Go into app and use conditional rendering to change the nav
-13. Lastly, create the logout 
+13. Create the logout button
+14. Lastly, create the go back method on the user view
 
     
     
